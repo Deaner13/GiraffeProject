@@ -8,7 +8,7 @@ public class App {
 
 	public static void main(String[] args) throws FileNotFoundException {
 	
-		//String fileLocation = "C:\\PERSONAL\\School\\2015\\CS1450\\TheHerd.txt";
+		String fileLocation = "C:\\PERSONAL\\School\\2015\\CS1450\\TheHerd.txt";
 		String fileLocation = "theHerd.txt";
 		File textFile = new File(fileLocation);
 		
