@@ -5,36 +5,9 @@ package giraffe;
 class Giraffe {
 
 	private String birthLocation, sire, dam, subSpecies, zoo, city, state, event, name,
-			localId;
-	private int birthdate, giraffeId;
-	private char sex;
-	
-	public String setBirthLocation(String location) {
-		this.birthLocation = location;
-
-		return ("Birth Location set to: " + location);
-	}
-
-	public String setSire(String sire) {
-		this.sire = sire;
-
-		return ("Sire set to: " + sire);
-	}
-	
-	/*
+			localId, birthDate;
 	private int giraffeId;
 	private char sex;
-	private String birthDate;
-	private String sire;
-	private String dam;
-	private String birthLocation;
-	private String localId;
-	private String name;
-	private String subspecies;
-	private String currentZoo;
-	private String city;
-	private String state;
-	private String event;
 	
 	public void setId(int gId){
 		giraffeId = gId;
@@ -69,11 +42,11 @@ class Giraffe {
 	}
 	
 	public void setSpecies(String gSpecies){
-		subspecies = gSpecies;
+		subSpecies = gSpecies;
 	}
 	
 	public void setZoo(String gZoo){
-		currentZoo = gZoo;
+		zoo = gZoo;
 	}
 	
 	public void setCity(String gCity){
@@ -106,8 +79,8 @@ class Giraffe {
 	
 	public void printInfo(){
 		System.out.printf(giraffeId + " " + sex + " " + birthDate + " " + sire + " " + dam + " " + birthLocation + " " +
-				localId + " " + name + " " + subspecies + " " + currentZoo + " " + city + " " + state + " " + event +"\n");
+				localId + " " + name + " " + subSpecies + " " + zoo + " " + city + " " + state + " " + event +"\n");
 	}
-	*/
+
 
 }
