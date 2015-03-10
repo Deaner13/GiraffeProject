@@ -1,29 +1,42 @@
 package giraffe;
+import learning.*;
+
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
-//C:\PERSONAL\School\2015\CS1450\TheHerd.txt
+
 
 public class App {
 
-	public static void main(String[] args) throws FileNotFoundException {
-	
-		String fileLocation = "C:\\PERSONAL\\School\\2015\\CS1450\\TheHerd.txt";
-		String fileLocation = "theHerd.txt";
-		File textFile = new File(fileLocation);
+	public static void main(String[] args){
 		
-		Scanner in = new Scanner(textFile);
+		Test test = new Test();
 		
-		String firstLine = in.nextLine();
-		
-		System.out.println(firstLine);
-		System.out.println(" ");
-		while(in.hasNextLine()){
-			String line = in.nextLine();
-			System.out.println(line);
+		/*try{
+		test.run();
+		} catch(ParseException e){
+			System.out.println("Couldn't parse");
 		}
-		
-		in.close();
+		catch(IOException e){
+			System.out.println("Couldn't parse");
+		}
+		*/
+		/*
+		try {
+			test.run();
+		} catch (IOException | ParseException e) {
+			// TODO Auto-generated catch block
+			System.out.println("EXCEPTION!");
+		}
+		*/
+		try{
+		test.run();
+		} catch(Exception e){
+			System.out.println("Couldn't parse");
+		}
 	}
 }
 

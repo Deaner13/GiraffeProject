@@ -1,6 +1,8 @@
 package learning;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.Scanner;
 
 public class Concepts {
@@ -145,5 +147,27 @@ public class Concepts {
 	 * 
 	 * in.close();
 	 * --------------------------------------------------------
+	 * --Exceptions 1--
+	 * 
+		try { 
+			openFile();
+		} catch (FileNotFoundException e){
+			System.out.println("Could not open file");
+		}
+		
+		
+		
+		}
+	
+		public static void openFile() throws FileNotFoundException{
+		
+		String fileLocation = "theHerd.txt";
+		File theHerd = new File(fileLocation);
+		
+		FileReader fr = new FileReader(fileLocation);
+		----------------------------------------------------------
+		--Exceptions 2--
+		
+		
 	 */
 }
