@@ -1,24 +1,42 @@
 package giraffe;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+//String firstLine = in.nextLine();
+//System.out.println(firstLine);
+//System.out.println(" ");
+
 public class HW3_Carlo {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		ArrayList<Giraffe2> giraffes = new ArrayList<>();
+		String line;
+		String temp[] = new String[13];
 		
-		Giraffe giraffe1 = new Giraffe();
-		giraffe1.setId(2193);
-		giraffe1.setSex('m');
-		giraffe1.setBirth("10-12-1954");
-		giraffe1.setBirthLocation("Colorado Springs");
-		giraffe1.setCity("Denver");
-		giraffe1.setDam("Mercedes");
-		giraffe1.setSire("Diamond");
+		
+		String fileLocation = "theHerd.txt";
+		File textFile = new File(fileLocation);
 
-		Giraffe giraffe2 = new Giraffe();
-		giraffe2.setId(2155);
-		giraffe2.setSex('f');
+		Scanner in = new Scanner(textFile);
 
-		giraffe1.printInfo();
-		giraffe2.printInfo();
+		while (in.hasNextLine()) {
+			line = in.nextLine();
+			temp = in.nextLine().split("\\t", 13);
+			System.out.println(in);
+			
+			for (int i = 0; i < temp.length; i++) {
+				giraffes.add(new Giraffe2(temp));
+				i++;
+			}
+		}
+
+		in.close();
+
+		System.out.println(giraffes);
 
 	}
 
