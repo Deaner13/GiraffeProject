@@ -16,28 +16,30 @@ public class HW3_Carlo {
 		ArrayList<Giraffe2> giraffes = new ArrayList<>();
 		String line;
 		String temp[] = new String[13];
-		
-		
+		int i = 0;
+
 		String fileLocation = "theHerd.txt";
 		File textFile = new File(fileLocation);
-
-		Scanner in = new Scanner(textFile);
-
-		while (in.hasNextLine()) {
-			line = in.nextLine();
-			temp = in.nextLine().split("\\t", 13);
-			System.out.println(in);
-			
-			for (int i = 0; i < temp.length; i++) {
+		
+		while(i < 90) {
+		if (textFile.canRead()) {
+			Scanner in = new Scanner(textFile);
+			in = new Scanner(textFile);
+			while (in.hasNextLine()) {
+				temp = in.nextLine().split("\\t", 13);
 				giraffes.add(new Giraffe2(temp));
+				
+				//for (int i = 0; i < temp.length; i++) {
+					//giraffes.add(new Giraffe2(temp));
+					//i++;
+				//}
 				i++;
+				in.close();
 			}
+			
+			in.close();
 		}
-
-		in.close();
-
-		System.out.println(giraffes);
-
+		System.out.println();
+		}
 	}
-
 }
