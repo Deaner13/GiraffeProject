@@ -11,7 +11,7 @@ public class HW3_Carlo {
 		//Create an array structures that will hold the Giraffes
 		ArrayList<Giraffe2> giraffes = new ArrayList<>();
 		Object[] giraffes2;
-		//Giraffe2[] giraffes3;
+		
 		
 		//Create an array that will hold tab-del values
 		String temp[] = new String[13];
@@ -19,13 +19,11 @@ public class HW3_Carlo {
 		//Define the file that will be used for creating objects
 		String fileLocation = "theHerd.txt";
 		File textFile = new File(fileLocation);
-		
+		Scanner in = new Scanner(textFile);
 		//Populate the giraffes ArrayList with items from the text file
-		int i = 0;
-		while(i < 90) {
+
 		if (textFile.canRead()) {
-			Scanner in = new Scanner(textFile);
-			in = new Scanner(textFile);
+			
 		//Take the first line of the file and make it a header
 			header = in.nextLine();
 			
@@ -34,19 +32,21 @@ public class HW3_Carlo {
 				temp = in.nextLine().split("\\t", 13);
 		//Create a new giraffe from the array of strings in temp
 				giraffes.add(new Giraffe2(temp));
-				i++;
 				}
-			
 			}
-		}
+		in.close();
 		
 		//Convert ArrayList to array
 		giraffes2 =  giraffes.toArray();
+		
 		System.out.println(header);
 		System.out.println(" ");
 		//Print out t
-		for(i = 0; i < giraffes2.length; i++){
-			System.out.println(giraffes2[i]);
+		for(int i = 0; i < giraffes.size(); i++){
+			System.out.println(giraffes.get(i));
+			Giraffe2 newGiraffe = giraffes.get(i);
+			newGiraffe.getZoo(giraffes);
 		}
+		giraffes.get(88).printData(giraffes2);
 	}
 }
