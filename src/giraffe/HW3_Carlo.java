@@ -9,7 +9,7 @@ public class HW3_Carlo {
 
 	public static void main(String[] args) throws IOException {
 		//Create an array structures that will hold the Giraffes
-		ArrayList<Giraffe2> giraffes = new ArrayList<>();
+		ArrayList<Giraffe> giraffes = new ArrayList<>();
 		Object[] giraffes2;
 		
 		
@@ -31,22 +31,28 @@ public class HW3_Carlo {
 		//Split each line at every tab (13 times), store in array temp
 				temp = in.nextLine().split("\\t", 13);
 		//Create a new giraffe from the array of strings in temp
-				giraffes.add(new Giraffe2(temp));
+				giraffes.add(new Giraffe(temp));
 				}
 			}
 		in.close();
 		
-		//Convert ArrayList to array
+		//Convert ArrayList to array.
 		giraffes2 =  giraffes.toArray();
 		
+		//Print out the necessary data. This could all be integrated into a method or
+		//class if needed.
 		System.out.println(header);
 		System.out.println(" ");
-		//Print out t
+		//Loop through the ArrayList to print out the different Giraffes.
 		for(int i = 0; i < giraffes.size(); i++){
-			System.out.println(giraffes.get(i));
-			Giraffe2 newGiraffe = giraffes.get(i);
-			newGiraffe.getZoo(giraffes);
+			System.out.println(giraffes.get(i).toString());
 		}
-		giraffes.get(88).printData(giraffes2);
+		
+		//A little formatting and calls to the counters that print out how many giraffes
+		//are in the file and also how many are at Cheyenne Mountain Zoo. Entering any number
+		//that is valid for the ArrayList will return the same result.
+		System.out.println("");
+		giraffes.get(1).getZoo(giraffes);
+		giraffes.get(1).printData(giraffes2);
 	}
 }
