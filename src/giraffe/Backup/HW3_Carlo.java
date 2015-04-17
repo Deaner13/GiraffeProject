@@ -43,12 +43,17 @@ public class HW3_Carlo {
 		//class if needed.
 		System.out.println(header);
 		System.out.println(" ");
-	
-		Herd herd = new Herd();
+		//Loop through the ArrayList to print out the different Giraffes.
+		for(int i = 0; i < giraffes.size(); i++){
+			System.out.println(giraffes.get(i).toString());
+		}
 		
-		Herd newHerd = herd.Add(giraffes);
-		newHerd.Display();
-		herd.Size();
-		newHerd.Find(172);
+		//A little formatting and calls to the counters that print out how many giraffes
+		//are in the file and also how many are at Cheyenne Mountain Zoo. Entering any number
+		//that is valid for the ArrayList will return the same result.
+		System.out.println("");
+		giraffes.get(1).getZoo(giraffes);
+		giraffes.get(1).printData(giraffes2);
+		giraffes.get(1).getYear(giraffes);
 	}
 }
