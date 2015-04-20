@@ -1,5 +1,6 @@
 package giraffe;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 
 
@@ -41,4 +42,16 @@ public class Herd extends LinkedList{
 		System.out.println("--------------------------");
 		}
 	
+=======
+public class Herd extends LinkedList {
+
+	public Herd(int errorValue) {
+		super(errorValue);
+	}
+	
+	
+
+
+
+>>>>>>> origin/master
 }

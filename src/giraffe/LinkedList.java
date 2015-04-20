@@ -1,10 +1,20 @@
 package giraffe;
 
 public class LinkedList {
-	protected Node start;
+	
+	private Node start;
+	private int errorReturn;
 	
 	public LinkedList(){
+
+
+	start = null;
+	
+	}
+	public LinkedList(int errorValue){
 		start = null;
+		errorReturn = errorValue;
+
 	}
 	
 	public boolean isEmpty(){
@@ -34,6 +44,7 @@ public class LinkedList {
 			length++;
 			currNode = currNode.next;
 		}
+
 		return length;
 	}
 	
